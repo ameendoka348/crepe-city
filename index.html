@@ -107,7 +107,7 @@
                 <a href="#contact" class="hover:text-brandRed transition-colors">تواصل معنا</a>
             </nav>
 
-            <!-- Actions (Cart & Language & Phone) -->
+            <!-- Actions (Cart & Phone) -->
             <div class="flex items-center gap-4">
                 <!-- Phone Quick Call -->
                 <a href="tel:01100233375" class="hidden lg:flex items-center gap-2 bg-gray-800/80 hover:bg-gray-700 px-4 py-2 rounded-full text-xs font-bold border border-gray-700 ltr-text">
@@ -135,7 +135,7 @@
             <a href="#about" class="block py-2 hover:text-brandRed transition-colors">عن المطعم</a>
             <a href="#contact" class="block py-2 hover:text-brandRed transition-colors">تواصل معنا</a>
             <div class="pt-2 border-t border-gray-700 text-xs ltr-text text-gray-400">
-                <i class="fa-solid fa-phone text-brandYellow"></i> 01100233375 | 01030556100
+                <i class="fa-solid fa-phone text-brandYellow"></i> 01100233375 | 01030556100 | 01154477067
             </div>
         </div>
     </header>
@@ -340,199 +340,1142 @@
             <div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
                 <span class="text-brandRed font-black text-sm uppercase tracking-widest bg-brandRed/10 px-4 py-1 rounded-full border border-brandRed/20">قائمة الطعام الفاخرة</span>
                 <h2 class="text-3xl sm:text-4xl font-black">اختر من أصنافنا الشهية</h2>
-                <p class="text-gray-400 text-sm">كريب مقرمش، مكرونة نجر سكو وبشاميل، بيتزا وساخن طازج.</p>
+                <p class="text-gray-400 text-sm">كريب مقرمش، بيتزا شهية، مكرونات طازجة، وساندوتشات على أصولها.</p>
             </div>
 
             <!-- Category Filter Buttons -->
-            <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
-                <button onclick="filterMenu('all')" class="menu-tab active-tab bg-brandRed text-white px-6 py-2.5 rounded-full font-bold text-sm shadow transition-all">الكل</button>
-                <button onclick="filterMenu('crepe-chicken')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-6 py-2.5 rounded-full font-bold text-sm transition-all">كريب فراخ</button>
-                <button onclick="filterMenu('crepe-meat')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-6 py-2.5 rounded-full font-bold text-sm transition-all">كريب لحوم</button>
-                <button onclick="filterMenu('crepe-mix')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-6 py-2.5 rounded-full font-bold text-sm transition-all">كريب ميكسات</button>
-                <button onclick="filterMenu('fries')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-6 py-2.5 rounded-full font-bold text-sm transition-all">بطاطس</button>
+            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+                <button onclick="filterMenu('all')" class="menu-tab active-tab bg-brandRed text-white px-5 py-2.5 rounded-full font-bold text-sm shadow transition-all">الكل</button>
+                <button onclick="filterMenu('crepe')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">ركن الكريب</button>
+                <button onclick="filterMenu('meals')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">ركن الوجبات</button>
+                <button onclick="filterMenu('atawla')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">ركن العتاولة</button>
+                <button onclick="filterMenu('pizza')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">ركن البيتزا</button>
+                <button onclick="filterMenu('pizza-fasting')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">بيتزا صيامي</button>
+                <button onclick="filterMenu('cheese-bowls')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">طاسات جبن</button>
+                <button onclick="filterMenu('sandwiches-chicken')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">ساندوتشات تشيكن</button>
+                <button onclick="filterMenu('sandwiches')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">ساندوتشات</button>
+                <button onclick="filterMenu('smash-burger')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">اسماش برجر</button>
+                <button onclick="filterMenu('pasta')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">ركن المكرونة</button>
+                <button onclick="filterMenu('appetizers')" class="menu-tab bg-gray-800 hover:bg-gray-700 text-gray-300 px-5 py-2.5 rounded-full font-bold text-sm transition-all">المقبلات والتقفيل</button>
             </div>
 
             <!-- Menu Grid -->
             <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                <!-- Item: فراخ بانيه عادى -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-chicken">
+
+                <!-- ===== 1. ركن الكريب ===== -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب فراخ</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">فراخ بانيه عادى</h4>
-                        <p class="text-xs text-gray-400">بانيه طازج مع الصوصات والبطاطس المقرمشة</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">50 ج.م</span>
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">فراخ بانية</h4>
+                        <p class="text-xs text-gray-400">كريب فراخ بانيه طازج مع الصوصات المميزة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">70 ج.م</span>
                     </div>
-                    <button onclick="addToCart('فراخ بانيه عادى (كريب)', 50, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('كريب فراخ بانية', 70, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: فراخ بانيه حار -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-chicken">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب فراخ</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">فراخ بانيه حار</h4>
-                        <p class="text-xs text-gray-400">بانيه حار مع التومية والصوص الحار المميز</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">55 ج.م</span>
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">فراخ كرسبي</h4>
+                        <p class="text-xs text-gray-400">قطع دجاج مقرمشة وذهبية</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">80 ج.م</span>
                     </div>
-                    <button onclick="addToCart('فراخ بانيه حار (كريب)', 55, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('كريب فراخ كرسبي', 80, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: فراخ استريبس -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-chicken">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب فراخ</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">فراخ استريبس</h4>
-                        <p class="text-xs text-gray-400">قطع استريبس مقرمشة ذهبية مع جبنة موزاريلا</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">60 ج.م</span>
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">سوبر كرانشي</h4>
+                        <p class="text-xs text-gray-400">طعم القرمشة الخرافية مع الموتزاريلا</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">85 ج.م</span>
                     </div>
-                    <button onclick="addToCart('فراخ استريبس (كريب)', 60, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('كريب سوبر كرانشي', 85, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: شاورما -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-chicken">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب فراخ</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">شاورما فراخ</h4>
-                        <p class="text-xs text-gray-400">شاورما فراخ تتبيلة خاصة مع صوص الثومية</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">65 ج.م</span>
-                    </div>
-                    <button onclick="addToCart('شاورما فراخ (كريب)', 65, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
-                        <i class="fa-solid fa-plus"></i>
-                    </button>
-                </div>
-
-                <!-- Item: شيش طاووق -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-chicken">
-                    <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب فراخ</span>
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
                         <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">شيش طاووق</h4>
-                        <p class="text-xs text-gray-400">قطع شيش طاووق مشوي مع الفلفل والألوان</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">65 ج.م</span>
+                        <p class="text-xs text-gray-400">قطع شيش طاووق مشوية مع الخضار والخص المتبل</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">95 ج.م</span>
                     </div>
-                    <button onclick="addToCart('شيش طاووق (كريب)', 65, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('كريب شيش طاووق', 95, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: زنجر حار -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-chicken">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب فراخ</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">زنجر حار</h4>
-                        <p class="text-xs text-gray-400">زنجر مقرمش حار للغاية مع صوص نار</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">65 ج.م</span>
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ميكس فراخ</h4>
+                        <p class="text-xs text-gray-400">توليفة ممتازة من أجود أنواع الدجاج</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
                     </div>
-                    <button onclick="addToCart('زنجر حار (كريب)', 65, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('كريب ميكس فراخ', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: لحمة مفرومة -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-meat">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب لحوم</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">لحمة مفرومة</h4>
-                        <p class="text-xs text-gray-400">لحمة معصجة بالطريقة الشرقية الأصيلة</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">50 ج.م</span>
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ميكس لحوم</h4>
+                        <p class="text-xs text-gray-400">خلطة اللحوم المميزة الخاصة بالمطعم</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
                     </div>
-                    <button onclick="addToCart('لحمة مفرومة (كريب)', 50, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('كريب ميكس لحوم', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: سوسيس -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-meat">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب لحوم</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">سوسيس</h4>
-                        <p class="text-xs text-gray-400">سوسيس مدخن مع الخضار والجبنة</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">55 ج.م</span>
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">شاورما جريل</h4>
+                        <p class="text-xs text-gray-400">شاورما طازجة مشوية على الجريل مع الثومية</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
                     </div>
-                    <button onclick="addToCart('سوسيس (كريب)', 55, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('كريب شاورما جريل', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: كفتة -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-meat">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب لحوم</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">كفتة مشوية</h4>
-                        <p class="text-xs text-gray-400">أصابع كفتة مشوية على الفحم مع الطحينة</p>
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">كوردن بلو</h4>
+                        <p class="text-xs text-gray-400">قطع كوردن بلو فاخرة محشوة بخلطة الجبن</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">110 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('كريب كوردن بلو', 110, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">فراخ استربس</h4>
+                        <p class="text-xs text-gray-400">أصابع استربس دجاج مقرمشة وشهية</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">85 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('كريب فراخ استربس', 85, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ميكس الجبن</h4>
+                        <p class="text-xs text-gray-400">توليفة أجود أنواع الأجبان المذابة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('كريب ميكس الجبن', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بطاطس</h4>
+                        <p class="text-xs text-gray-400">كريب بطاطس محمرة مقرمشة بالصوصات</p>
                         <span class="text-lg font-black text-brandYellow block pt-1">60 ج.م</span>
                     </div>
-                    <button onclick="addToCart('كفتة (كريب)', 60, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('كريب بطاطس', 60, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: سجق شرقي -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-meat">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب لحوم</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">سجق شرقي</h4>
-                        <p class="text-xs text-gray-400">سجق بلدي بالخلطة الشرقية الحارة</p>
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">زنجر</h4>
+                        <p class="text-xs text-gray-400">زنجر حار ومقرمش خطير</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('كريب زنجر', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">برجر فحم</h4>
+                        <p class="text-xs text-gray-400">برجر مشوي على الفحم الحقيقي</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">110 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('كريب برجر فحم', 110, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">سوسيس</h4>
+                        <p class="text-xs text-gray-400">سوسيس مدخن مع الخضار والموتزاريلا</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">80 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('كريب سوسيس', 80, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بانية ع بطاطس</h4>
+                        <p class="text-xs text-gray-400">ميكس بانيه دجاج مع البطاطس المقرمشة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">80 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('كريب بانية ع بطاطس', 80, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">تونه</h4>
+                        <p class="text-xs text-gray-400">تونة فاخرة مع الخضار والليمون والزيتون</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('كريب تونه', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الكريب</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">لحمة مفرومة</h4>
+                        <p class="text-xs text-gray-400">لحم مفروم معصج بالطريقة الخاصة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('كريب لحمة مفرومة', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- ===== 2. ركن الوجبات ===== -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="meals">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الوجبات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">وجبة قطعتين</h4>
+                        <p class="text-xs text-gray-400">2 قطعة بروستد + بطاطس + ثومية + عيش</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">100 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('وجبة قطعتين', 100, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="meals">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الوجبات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">وجبة 3 قطع</h4>
+                        <p class="text-xs text-gray-400">3 قطع بروستد + بطاطس + ثومية + كول سلو + عيش</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">120 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('وجبة 3 قطع', 120, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="meals">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الوجبات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">وجبة 5 قطع</h4>
+                        <p class="text-xs text-gray-400">5 قطع بروستد + بطاطس حجم عائلي + ثومية + عيش</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">170 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('وجبة 5 قطع', 170, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="meals">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن الوجبات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">وجبة 10 قطع</h4>
+                        <p class="text-xs text-gray-400">وجبة العائلة 10 قطع بروستد + بطاطس + مقبلات</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">310 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('وجبة 10 قطع', 310, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- ===== 3. ركن العتاولة ===== -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="atawla">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن العتاولة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">وحش العتاولة</h4>
+                        <p class="text-xs text-gray-400">بانيه + كرسبي + استربس + سوسيس</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('وحش العتاولة', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="atawla">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن العتاولة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">الصاروخ</h4>
+                        <p class="text-xs text-gray-400">بانية + بطاطس + استربس + سوسيس</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">85 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('الصاروخ', 85, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="atawla">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن العتاولة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">حبيشة</h4>
+                        <p class="text-xs text-gray-400">شاورما + بانية + استربس + بطاطس</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('حبيشة', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="atawla">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن العتاولة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مافيا</h4>
+                        <p class="text-xs text-gray-400">زنجر + شيش + استربس</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('مافيا', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="atawla">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن العتاولة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">نسر الصعيد</h4>
+                        <p class="text-xs text-gray-400">شيش طاووق + استربس + سوسيس</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">90 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('نسر الصعيد', 90, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="atawla">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن العتاولة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">شطشوط</h4>
+                        <p class="text-xs text-gray-400">كرسبي + بانية + استربس (حار)</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">80 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('شطشوط', 80, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="atawla">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن العتاولة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">الطوفان</h4>
+                        <p class="text-xs text-gray-400">شيش طاووق + استربس + بطاطس</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">85 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('الطوفان', 85, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="atawla">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن العتاولة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بازوكا وش كونو</h4>
+                        <p class="text-xs text-gray-400">ميكس فراخ + بطاطس + ميكس لحوم</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">100 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('بازوكا وش كونو', 100, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- ===== 4. ركن البيتزا ===== -->
+                <!-- تشيكن رانش -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن البيتزا</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا تشيكن رانش</h4>
+                        <p class="text-xs text-gray-400">قطع دجاج مع صوص الرانش المميز</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا تشيكن رانش (M)', 110, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 110</button>
+                            <button onclick="addToCart('بيتزا تشيكن رانش (L)', 125, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 125</button>
+                            <button onclick="addToCart('بيتزا تشيكن رانش (XL)', 140, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 140</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مارجريتا -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن البيتزا</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا مارجريتا</h4>
+                        <p class="text-xs text-gray-400">جبنة موتزاريلا مع الصلصة الإيطالية الفاخرة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا مارجريتا (M)', 85, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 85</button>
+                            <button onclick="addToCart('بيتزا مارجريتا (L)', 95, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 95</button>
+                            <button onclick="addToCart('بيتزا مارجريتا (XL)', 105, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 105</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ميكس جبن -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن البيتزا</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا ميكس جبن</h4>
+                        <p class="text-xs text-gray-400">تشكيلة أجبان غنية ومقرمشة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا ميكس جبن (M)', 110, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 110</button>
+                            <button onclick="addToCart('بيتزا ميكس جبن (L)', 125, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 125</button>
+                            <button onclick="addToCart('بيتزا ميكس جبن (XL)', 140, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 140</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- شاورما فراخ -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن البيتزا</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا شاورما فراخ</h4>
+                        <p class="text-xs text-gray-400">شاورما دجاج متبلة ومحمّرة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا شاورما فراخ (M)', 100, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 100</button>
+                            <button onclick="addToCart('بيتزا شاورما فراخ (L)', 110, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 110</button>
+                            <button onclick="addToCart('بيتزا شاورما فراخ (XL)', 120, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 120</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- لحمه مفرومه -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن البيتزا</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا لحمه مفرومه</h4>
+                        <p class="text-xs text-gray-400">لحم مفروم بلدي مع الخضار الطازج</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا لحمه مفرومه (M)', 95, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 95</button>
+                            <button onclick="addToCart('بيتزا لحمه مفرومه (L)', 105, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 105</button>
+                            <button onclick="addToCart('بيتزا لحمه مفرومه (XL)', 120, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 120</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ميكس فراخ -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن البيتزا</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا ميكس فراخ</h4>
+                        <p class="text-xs text-gray-400">مزيج من أجود أنواع الدجاج والموتزاريلا</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا ميكس فراخ (M)', 120, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 120</button>
+                            <button onclick="addToCart('بيتزا ميكس فراخ (L)', 130, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 130</button>
+                            <button onclick="addToCart('بيتزا ميكس فراخ (XL)', 140, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 140</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- سوسيس -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن البيتزا</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا سوسيس</h4>
+                        <p class="text-xs text-gray-400">سوسيس مدخن مع صلصة البيتزا الممتازة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا سوسيس (M)', 95, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 95</button>
+                            <button onclick="addToCart('بيتزا سوسيس (L)', 105, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 105</button>
+                            <button onclick="addToCart('بيتزا سوسيس (XL)', 120, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 120</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- سجق شرقي -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن البيتزا</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا سجق شرقي</h4>
+                        <p class="text-xs text-gray-400">سجق شرقي بلدي بالبهارات</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا سجق شرقي (M)', 95, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 95</button>
+                            <button onclick="addToCart('بيتزا سجق شرقي (L)', 105, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 105</button>
+                            <button onclick="addToCart('بيتزا سجق شرقي (XL)', 120, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 120</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بيتزا كريب سيتي -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن البيتزا</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا كريب سيتي</h4>
+                        <p class="text-xs text-gray-400">البيتزا الخصوصي الخارقة بجميع الإضافات</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا كريب سيتي (M)', 120, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 120</button>
+                            <button onclick="addToCart('بيتزا كريب سيتي (L)', 135, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 135</button>
+                            <button onclick="addToCart('بيتزا كريب سيتي (XL)', 150, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 150</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 5. البيتزا الصيامي ===== -->
+                <!-- خضار -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza-fasting">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">بيتزا صيامي</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا خضار صيامي</h4>
+                        <p class="text-xs text-gray-400">تشكيلة خضروات طازجة متنوعة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا خضار صيامي (M)', 60, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 60</button>
+                            <button onclick="addToCart('بيتزا خضار صيامي (L)', 70, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 70</button>
+                            <button onclick="addToCart('بيتزا خضار صيامي (XL)', 85, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 85</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مشروم -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza-fasting">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">بيتزا صيامي</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا مشروم صيامي</h4>
+                        <p class="text-xs text-gray-400">شرائح المشروم الطازج مع الخضروات</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا مشروم صيامي (M)', 75, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 75</button>
+                            <button onclick="addToCart('بيتزا مشروم صيامي (L)', 85, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 85</button>
+                            <button onclick="addToCart('بيتزا مشروم صيامي (XL)', 95, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 95</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بطاطس -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza-fasting">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">بيتزا صيامي</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا بطاطس صيامي</h4>
+                        <p class="text-xs text-gray-400">بطاطس محمرة شهية مع الصلصة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا بطاطس صيامي (M)', 75, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 75</button>
+                            <button onclick="addToCart('بيتزا بطاطس صيامي (L)', 85, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 85</button>
+                            <button onclick="addToCart('بيتزا بطاطس صيامي (XL)', 95, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 95</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تونه -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza-fasting">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">بيتزا صيامي</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا تونه صيامي</h4>
+                        <p class="text-xs text-gray-400">تونة فاخرة مع الخضار والزيتون</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا تونه صيامي (M)', 100, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 100</button>
+                            <button onclick="addToCart('بيتزا تونه صيامي (L)', 115, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 115</button>
+                            <button onclick="addToCart('بيتزا تونه صيامي (XL)', 125, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 125</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- تونه قطع -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pizza-fasting">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">بيتزا صيامي</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيتزا تونه قطع صيامي</h4>
+                        <p class="text-xs text-gray-400">قطع تونة فاخرة متكاملة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بيتزا تونه قطع صيامي (M)', 120, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">M: 120</button>
+                            <button onclick="addToCart('بيتزا تونه قطع صيامي (L)', 135, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">L: 135</button>
+                            <button onclick="addToCart('بيتزا تونه قطع صيامي (XL)', 150, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">XL: 150</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 6. طاسات جبن ===== -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="cheese-bowls">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">طاسات جبن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">طاسة جبن كرسبي</h4>
+                        <p class="text-xs text-gray-400">كرسبي مقرمش في طاسة جبن سايحة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">100 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('طاسة جبن كرسبي', 100, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="cheese-bowls">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">طاسات جبن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">طاسة جبن سجق</h4>
+                        <p class="text-xs text-gray-400">سجق بلدي في طاسة جبن غنية</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">100 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('طاسة جبن سجق', 100, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="cheese-bowls">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">طاسات جبن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">طاسة جبن ميكس فراخ</h4>
+                        <p class="text-xs text-gray-400">خلطة فراخ مشكلة مغطاة بالأجبان المذابة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">100 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('طاسة جبن ميكس فراخ', 100, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="cheese-bowls">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">طاسات جبن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">طاسة جبن شاورما فراخ</h4>
+                        <p class="text-xs text-gray-400">شاورما دجاج ممتازة في طاسة أجبان</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">100 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('طاسة جبن شاورما فراخ', 100, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="cheese-bowls">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">طاسات جبن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">طاسة جبن كريب سيتي</h4>
+                        <p class="text-xs text-gray-400">طاسة المكس الخاصة بالمطعم</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">100 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('طاسة جبن كريب سيتي', 100, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- ===== 7. ساندوتشات تشيكن ===== -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches-chicken">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات تشيكن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">تشيكن استريبس</h4>
+                        <p class="text-xs text-gray-400">ساندوتش استريبس دجاج حار أو عادى</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">50 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش تشيكن استريبس', 50, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches-chicken">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات تشيكن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">تشيكن سنجل</h4>
+                        <p class="text-xs text-gray-400">قطعة فراخ مقرمشة ممتازة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">50 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش تشيكن سنجل', 50, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches-chicken">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات تشيكن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">تشيكن كوردن بلو</h4>
+                        <p class="text-xs text-gray-400">كوردن بلو محشو جبنة شيدر وموتزاريلا</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">65 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش تشيكن كوردن بلو', 65, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches-chicken">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات تشيكن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">تشيكن زنجر</h4>
+                        <p class="text-xs text-gray-400">زنجر حار مع المايونيز والخص</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">50 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش تشيكن زنجر', 50, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches-chicken">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات تشيكن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">تشيكن رانش</h4>
+                        <p class="text-xs text-gray-400">دجاج مقرمش مع صوص الرانش اللذيذ</p>
                         <span class="text-lg font-black text-brandYellow block pt-1">55 ج.م</span>
                     </div>
-                    <button onclick="addToCart('سجق شرقي (كريب)', 55, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('ساندوتش تشيكن رانش', 55, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: مكس فراخ -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-mix">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches-chicken">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب ميكسات</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكس فراخ (شاورما + كريسبي + استريبس)</h4>
-                        <p class="text-xs text-gray-400">التوليفة الأقوى لمحبي الدجاج بجميع أنواعه</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">65 ج.م</span>
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات تشيكن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">تشيكن باربيكيو</h4>
+                        <p class="text-xs text-gray-400">ساندوتش دجاج بصوص الباربيكيو المدخن</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">120 ج.م</span>
                     </div>
-                    <button onclick="addToCart('مكس فراخ (كريب)', 65, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('ساندوتش تشيكن باربيكيو', 120, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: مكس لحوم -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="crepe-mix">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches-chicken">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">كريب ميكسات</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكس لحوم (كفتة + سجق + برجر)</h4>
-                        <p class="text-xs text-gray-400">مزيج اللحوم الفاخر بخلطة كريب سيتي</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">65 ج.م</span>
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات تشيكن</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">تشيكن كريب سيتي</h4>
+                        <p class="text-xs text-gray-400">ساندوتش الدجاج الخاص بالمحل مع الخلطة السرية</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">80 ج.م</span>
                     </div>
-                    <button onclick="addToCart('مكس لحوم (كريب)', 65, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('ساندوتش تشيكن كريب سيتي', 80, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: بطاطس سادة -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="fries">
+                <!-- ===== 8. ساندوتشات متنوعة ===== -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">بطاطس مقرمشة</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بطاطس سادة</h4>
-                        <p class="text-xs text-gray-400">بطاطس ذهبية مقرمشة مع التومية</p>
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش شاورما</h4>
+                        <p class="text-xs text-gray-400">شاورما فراخ بلدي متبلة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">50 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش شاورما', 50, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش سجق</h4>
+                        <p class="text-xs text-gray-400">سجق شرقي حار بالطحينة</p>
                         <span class="text-lg font-black text-brandYellow block pt-1">35 ج.م</span>
                     </div>
-                    <button onclick="addToCart('بطاطس سادة', 35, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('ساندوتش سجق', 35, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
 
-                <!-- Item: بطاطس بالموزاريلا -->
-                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="fries">
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
                     <div class="space-y-1">
-                        <span class="text-xs text-brandYellow font-semibold">بطاطس مقرمشة</span>
-                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بطاطس بالموزاريلا</h4>
-                        <p class="text-xs text-gray-400">بطاطس ساخنة مغطاة بطبقة جبنة موزاريلا سايحة</p>
-                        <span class="text-lg font-black text-brandYellow block pt-1">45 ج.م</span>
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش كبدة</h4>
+                        <p class="text-xs text-gray-400">كبده إسكندراني بالخلطة الحارة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">35 ج.م</span>
                     </div>
-                    <button onclick="addToCart('بطاطس بالموزاريلا', 45, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                    <button onclick="addToCart('ساندوتش كبدة', 35, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش سوسيس</h4>
+                        <p class="text-xs text-gray-400">سوسيس مدخن مع الكاتشب والمايونيز</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">35 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش سوسيس', 35, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش بطاطس</h4>
+                        <p class="text-xs text-gray-400">بطاطس مقرمشة مع التومية والكاتشب</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">30 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش بطاطس', 30, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش برجر جبنه</h4>
+                        <p class="text-xs text-gray-400">برجر لحم مغطى بجبنة شيدر سايحة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">40 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش برجر جبنه', 40, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش برجر بيض</h4>
+                        <p class="text-xs text-gray-400">برجر لحم مع بيض مقلي وصوصات</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">40 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش برجر بيض', 40, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش برجر فحم</h4>
+                        <p class="text-xs text-gray-400">برجر لحم مشوي طازج على الفحم</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">50 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش برجر فحم', 50, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش برجر فحم دابل</h4>
+                        <p class="text-xs text-gray-400">2 قطعة برجر لحم مشوي على الفحم</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">80 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش برجر فحم دابل', 80, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="sandwiches">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ساندوتشات</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">ساندوتش برجر فحم تريبل</h4>
+                        <p class="text-xs text-gray-400">3 قطع برجر لحم مشوي على الفحم</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">120 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('ساندوتش برجر فحم تريبل', 120, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- ===== 9. ركن الاسماش برجر ===== -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="smash-burger">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">اسماش برجر</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">اسماش برجر سنجل</h4>
+                        <p class="text-xs text-gray-400">قطعة اسماش برجر مقرمشة الأطراف</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">75 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('اسماش برجر سنجل', 75, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="smash-burger">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">اسماش برجر</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">اسماش برجر دبل</h4>
+                        <p class="text-xs text-gray-400">2 قطعة اسماش برجر مع جبنة شيدر المذابة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">110 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('اسماش برجر دبل', 110, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="smash-burger">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">اسماش برجر</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">اسماش برجر تريبل</h4>
+                        <p class="text-xs text-gray-400">3 قطع اسماش برجر لـ محبي الحجم الضخم</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">150 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('اسماش برجر تريبل', 150, 'IMG_6198.jpg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <!-- ===== 10. ركن المكرونة ===== -->
+                <!-- مكرونه صلصة -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه صلصة</h4>
+                        <p class="text-xs text-gray-400">مكرونة إيطالية بالصلصة الحمراء المميزة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه صلصة (وسط)', 30, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 30</button>
+                            <button onclick="addToCart('مكرونه صلصة (كبير)', 40, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 40</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مكرونه نجرسكو -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه نجرسكو</h4>
+                        <p class="text-xs text-gray-400">نجرسكو الفراخ بالبشاميل والموتزاريلا</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه نجرسكو (وسط)', 60, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 60</button>
+                            <button onclick="addToCart('مكرونه نجرسكو (كبير)', 70, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 70</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- بشاميل ع كيفك -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بشاميل ع كيفك</h4>
+                        <p class="text-xs text-gray-400">مكرونة بشاميل باللحمة المفرومة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('بشاميل ع كيفك (وسط)', 70, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 70</button>
+                            <button onclick="addToCart('بشاميل ع كيفك (كبير)', 70, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 70</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مكرونه كبدة -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه كبدة</h4>
+                        <p class="text-xs text-gray-400">طاجن مكرونة بالكبدة الإسكندراني</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه كبدة (وسط)', 50, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 50</button>
+                            <button onclick="addToCart('مكرونه كبدة (كبير)', 60, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 60</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مكرونه شاورما فراخ -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه شاورما فراخ</h4>
+                        <p class="text-xs text-gray-400">مكرونة بقطع شاورما الفراخ المتبلة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه شاورما فراخ (وسط)', 55, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 55</button>
+                            <button onclick="addToCart('مكرونه شاورما فراخ (كبير)', 65, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 65</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مكرونه لحمه مفرومه -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه لحمه مفرومه</h4>
+                        <p class="text-xs text-gray-400">طاجن مكرونة بولونيز باللحم المفروم</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه لحمه مفرومه (وسط)', 55, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 55</button>
+                            <button onclick="addToCart('مكرونه لحمه مفرومه (كبير)', 65, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 65</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مكرونه سوسيس -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه سوسيس</h4>
+                        <p class="text-xs text-gray-400">مكرونة بقطع السوسيس والصلصة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه سوسيس (وسط)', 55, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 55</button>
+                            <button onclick="addToCart('مكرونه سوسيس (كبير)', 65, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 65</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مكرونه فراخ بانيه -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه فراخ بانيه</h4>
+                        <p class="text-xs text-gray-400">مكرونة حمراء مع قطع البانيه المقرمش</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه فراخ بانيه (وسط)', 50, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 50</button>
+                            <button onclick="addToCart('مكرونه فراخ بانيه (كبير)', 60, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 60</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مكرونه استريبس -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه استريبس</h4>
+                        <p class="text-xs text-gray-400">مكرونة مع استريبس الدجاج المقرمش</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه استريبس (وسط)', 60, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 60</button>
+                            <button onclick="addToCart('مكرونه استريبس (كبير)', 70, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 70</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مكرونه ميكس جبن -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه ميكس جبن</h4>
+                        <p class="text-xs text-gray-400">مكرونة بخلطة الأجبان المذابة الحارة</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه ميكس جبن (وسط)', 55, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 55</button>
+                            <button onclick="addToCart('مكرونه ميكس جبن (كبير)', 65, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 65</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- مكرونه كريب سيتي -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="pasta">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">ركن المكرونة</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مكرونه كريب سيتي</h4>
+                        <p class="text-xs text-gray-400">طاجن المكرونة الميكس الخاص بالمطعم</p>
+                        <div class="flex gap-2 pt-2">
+                            <button onclick="addToCart('مكرونه كريب سيتي (وسط)', 60, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">وسط: 60</button>
+                            <button onclick="addToCart('مكرونه كريب سيتي (كبير)', 70, 'IMG_6194.jpg')" class="bg-gray-800 hover:bg-brandRed text-xs px-2.5 py-1 rounded-lg text-white transition-all">كبير: 70</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== 11. المقبلات والتقفيل ===== -->
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">باكت بطاطس</h4>
+                        <p class="text-xs text-gray-400">بطاطس محمرة مقرمشة سخنة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">30 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('باكت بطاطس', 30, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">عيش توست</h4>
+                        <p class="text-xs text-gray-400">شرائح عيش توست محمص</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">20 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('عيش توست', 20, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">حلقات بصل</h4>
+                        <p class="text-xs text-gray-400">حلقات بصل مقرمشة مقلية</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">30 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('حلقات بصل', 30, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">مخلل</h4>
+                        <p class="text-xs text-gray-400">طبق مخلل مشكل طازج</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">20 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('مخلل', 20, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">سلطات سيزر</h4>
+                        <p class="text-xs text-gray-400">فراخ + خس + توست محمص</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">50 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('سلطات سيزر', 50, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">الثومية</h4>
+                        <p class="text-xs text-gray-400">علبة ثومية غنية وطازجة</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">15 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('الثومية', 15, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">المايونيز</h4>
+                        <p class="text-xs text-gray-400">علبة صوص مايونيز فاخر</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">15 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('المايونيز', 15, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">صوص الرانش</h4>
+                        <p class="text-xs text-gray-400">علبة صوص رانش غني</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">20 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('صوص الرانش', 20, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">الباربيكيو</h4>
+                        <p class="text-xs text-gray-400">علبة صوص باربيكيو مدخن</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">15 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('الباربيكيو', 15, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
+                        <i class="fa-solid fa-plus"></i>
+                    </button>
+                </div>
+
+                <div class="menu-item bg-brandCard p-5 rounded-2xl border border-gray-800 flex justify-between items-center group hover:border-brandRed/40 transition-all" data-category="appetizers">
+                    <div class="space-y-1">
+                        <span class="text-xs text-brandYellow font-semibold">المقبلات والتقفيل</span>
+                        <h4 class="font-bold text-white text-base group-hover:text-brandRed transition-colors">بيبسی كنز</h4>
+                        <p class="text-xs text-gray-400">مشروب غازي مثلج</p>
+                        <span class="text-lg font-black text-brandYellow block pt-1">20 ج.م</span>
+                    </div>
+                    <button onclick="addToCart('بيبسی كنز', 20, 'IMG_6190.jpeg')" class="bg-gray-800 hover:bg-brandRed text-white w-10 h-10 rounded-full flex items-center justify-center shadow transition-all" aria-label="إضافة للعربة">
                         <i class="fa-solid fa-plus"></i>
                     </button>
                 </div>
@@ -573,14 +1516,21 @@
                             <i class="fa-solid fa-map-pin text-brandYellow mt-1"></i>
                             <div>
                                 <strong class="text-white block">العنوان:</strong>
-                                <span>أبوتيج - شارع خيرالله - أمام شركة تساهيل - بجوار القصر السوري</span>
+                                <span>أبوتيج - شارع خيرالله - بجوار القصر السوري</span>
                             </div>
                         </li>
                         <li class="flex items-center gap-3">
                             <i class="fa-solid fa-phone text-brandYellow"></i>
                             <div>
                                 <strong class="text-white block">أرقام الحجز والدليفري:</strong>
-                                <span class="ltr-text text-brandYellow font-bold block">01100233375 - 01030556100 - 01144325222</span>
+                                <span class="ltr-text text-brandYellow font-bold block">01100233375 - 01030556100 - 01154477067</span>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-user-tie text-brandYellow"></i>
+                            <div>
+                                <strong class="text-white block">الإدارة:</strong>
+                                <span>عبد الرحمن محمد (01013004938)</span>
                             </div>
                         </li>
                         <li class="flex items-center gap-3">
@@ -683,7 +1633,7 @@
                     <label class="block text-xs text-gray-400 mb-1 font-semibold">طريقة الدفع *</label>
                     <select id="payment-method" class="w-full bg-gray-900 border border-gray-800 rounded-xl px-4 py-3 text-white text-sm focus:border-brandRed focus:outline-none">
                         <option value="cash">الدفع نقداً عند الاستلام (Cash)</option>
-                        <option value="vodafone">فودافون كاش (01144325222)</option>
+                        <option value="vodafone">فودافون كاش</option>
                     </select>
                 </div>
                 <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-2xl shadow-lg transition-all flex items-center justify-center gap-2">
